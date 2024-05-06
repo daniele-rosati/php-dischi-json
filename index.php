@@ -18,9 +18,50 @@
 </head>
 <body>
     
-    
-    <!-- BOOSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div id="app">
+        <header>
+            <div class="container d-flex aligt-items-center">
+                <i class="fa-brands fa-spotify"></i>
+            </div>
+
+            <div class="overflow-auto">
+
+                <div class="container">
+
+                    <div class="row row-cols-3 px-5">
+
+                        <div :v-for=" (disk, index) in dischi " :key=" index " class="col p-4">
+
+                            <div class="card text-center">
+
+                                <img :src="disk.poster" class="pt-4 px-5" alt="Cover">
+
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{ disk.title }} </h5>
+                                    <p class="card-author"> {{ disk.author }} </p>
+                                    <h5 class="card-year"> {{ disk.year }} </h5>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </div>
+    <script src="js/script.js"></script>
+   
+    <?php
+    include ".server.php";
+    ?>
+
 
 </body>
 </html>
